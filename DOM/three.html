@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore with DOM</title>
+    <style>
+        * {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+
+    <ol class="month">
+        <li>January</li>
+    </ol>
+    <!-- JavaScript -->
+    <script>
+        function addLanguage(langName) {
+            const li = document.createElement('li');
+            li.innerHTML = `${langName}`;
+            document.querySelector('.language').appendChild(li)
+        }
+        addLanguage('C++');
+        addLanguage('Python');
+        addLanguage('Ruby');
+
+        // optimize way to write code 
+        function addOptimizeLanguage(langName) {
+            const li = document.createElement('li');
+            const addLi = document.createTextNode(langName);
+            li.appendChild(addLi);
+            document.querySelector('.language').appendChild(li);
+        }
+        addOptimizeLanguage('golang')
+        addOptimizeLanguage('typescript')
+
+        // best recommended way to optimize your code
+        function addMonth(monthName) {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(monthName));
+            document.querySelector('.month').appendChild(li)
+        }
+        addMonth('February')
+        addMonth('March')
+        addMonth('April')
+        addMonth('May')
+    </script>
+</body>
+
+</html>
